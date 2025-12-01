@@ -1,0 +1,28 @@
+/* Firefox version 145.0.1 */
+
+/* Decrease tab heights to fit in more vertical tabs. */
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab {
+	--tab-min-height: 22px !important;
+}
+
+/* Expand page content to fill height. */
+#tabbrowser-tabbox {
+	top: -40px;
+	height: calc(100% + 40px);
+}
+/* Hide urlbar since it blocks the expanded page content. */
+#urlbar {
+	top: -40px !important;
+}
+
+/* Show navigator-toolbox when hovered. */
+#navigator-toolbox:hover,
+#navigator-toolbox:focus-within,
+#mainPopupSet:hover ~ #navigator-toolbox {
+	z-index: 9001 !important;
+}
+#navigator-toolbox:hover #urlbar,
+#navigator-toolbox:focus-within #urlbar,
+#mainPopupSet:hover ~ #navigator-toolbox #urlbar {
+	top: 4px !important;
+}

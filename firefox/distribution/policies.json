@@ -1,0 +1,10 @@
+{
+ "policies": {
+    "DisableAppUpdate": true,
+    "ManualAppUpdateOnly": true,
+    "Preferences": {
+      "toolkit.legacyUserProfileCustomizations.stylesheets": {"Value": true, "Status": "locked"},
+      "browser.tabs.groups.enabled": {"Value": false, "Status": "locked"}
+    }
+  }
+}
