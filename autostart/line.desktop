@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/snap/bin/chromium -app="chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Line
+Name=Line
+Comment[en_US]=Chrome
+Comment=Chrome

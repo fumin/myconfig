@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=lxc network list
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=lxcd
+Name=lxcd
+Comment[en_US]=lxcd
+Comment=lxcd
