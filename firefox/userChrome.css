@@ -26,3 +26,10 @@
 #mainPopupSet:hover ~ #navigator-toolbox #urlbar {
 	top: 4px !important;
 }
+
+/* Disable top right window dragging since we don't have a mouse wheel and rely on dragging the scroll bar.
+The scroll bar may become very short if the page is long, and our mouse cursor is forced to drag very near the top right corner.
+This annoyingly triggers the accidental window dragging. */
+.titlebar-buttonbox-container {
+	display: none;
+}
