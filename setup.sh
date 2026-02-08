@@ -6,6 +6,7 @@ fi
 
 ln -s $PWD/bashrc $HOME/.mybash
 ln -s $PWD/vimrc $HOME/.vimrc
+ln -s $PWD/fonts.conf $HOME/.config/fontconfig/fonts.conf
 mkdir -p $HOME/.config/autostart
 for FNAME in `ls $PWD/autostart`; do
 	ln -s $PWD/autostart/$FNAME $HOME/.config/autostart/$FNAME
