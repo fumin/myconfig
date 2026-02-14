@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/snap/bin/chromium -app="chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html"
+Exec=google-chrome -app="chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html"
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true

@@ -4,6 +4,9 @@ if [[ ! -n $FIREFOX_PROFILE ]]; then
 	exit 1
 fi
 
+# sudo mv /usr/bin/update-notifier /usr/bin/update-notifier-xxx
+# sudo mv /usr/bin/update-manager /usr/bin/update-manager-xxx
+
 ln -s $PWD/bashrc $HOME/.mybash
 ln -s $PWD/vimrc $HOME/.vimrc
 ln -s $PWD/fonts.conf $HOME/.config/fontconfig/fonts.conf
