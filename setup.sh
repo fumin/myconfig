@@ -7,6 +7,8 @@ fi
 # sudo mv /usr/bin/update-notifier /usr/bin/update-notifier-xxx
 # sudo mv /usr/bin/update-manager /usr/bin/update-manager-xxx
 
+sudo cp appdesktops/* /usr/share/applications
+
 ln -s $PWD/bashrc $HOME/.mybash
 ln -s $PWD/vimrc $HOME/.vimrc
 ln -s $PWD/fonts.conf $HOME/.config/fontconfig/fonts.conf
@@ -31,7 +33,7 @@ mkdir -p $HOME/.config/lxc
 ln -s $PWD/lxc.conf $HOME/.config/lxc/default.conf
 
 # Firefox.
-mkdir -p $FIREFOX_PROFILE/chrome/distribution
+mkdir -p $FIREFOX_PROFILE/chrome
 ln -s $PWD/firefox/userChrome.css $FIREFOX_PROFILE/chrome/userChrome.css
 ln -s $PWD/firefox/userContent.css $FIREFOX_PROFILE/chrome/userContent.css
-ln -s $PWD/firefox/distribution/policies.json $FIREFOX_PROFILE/chrome/distribution/policies.json
+sudo ln -s $PWD/firefox/distribution/policies.json /usr/local/firefox/distribution/policies.json

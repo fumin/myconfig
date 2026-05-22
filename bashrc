@@ -1,6 +1,7 @@
 export LC_ALL=C.UTF-8
 
-export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+export GOPATH=$HOME/.local/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 # Set the BROWSER environment so that `go tool pprof -web` uses our browser instead of the default chrome.
 export BROWSER=/usr/local/firefox/firefox
 
