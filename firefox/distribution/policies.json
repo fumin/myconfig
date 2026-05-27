@@ -4,7 +4,11 @@
     "ManualAppUpdateOnly": true,
     "Preferences": {
       "toolkit.legacyUserProfileCustomizations.stylesheets": {"Value": true, "Status": "locked"},
-      "browser.tabs.groups.enabled": {"Value": false, "Status": "locked"}
+      "browser.tabs.groups.enabled": {"Value": false, "Status": "locked"},
+
+      "pdfjs.forcePageColors": {"Value": true, "Status": "locked"},
+      "pdfjs.pageColorsBackground": {"Value": "#000000", "Status": "locked"},
+      "pdfjs.pageColorsForeground": {"Value": "#ffffff", "Status": "locked"}
     }
   }
 }

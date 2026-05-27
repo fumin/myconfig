@@ -1,4 +1,4 @@
-/* Firefox version 145.0.1 */
+/* Firefox version 158.0.1 */
 
 /* Decrease tab heights to fit in more vertical tabs. */
 #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab {
@@ -32,4 +32,9 @@ The scroll bar may become very short if the page is long, and our mouse cursor i
 This annoyingly triggers the accidental window dragging. */
 .titlebar-buttonbox-container {
 	display: none;
+}
+
+#navigator-toolbox,
+#sidebar-container {
+	background: black !important;
 }
