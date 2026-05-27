@@ -7,11 +7,15 @@ fi
 # sudo mv /usr/bin/update-notifier /usr/bin/update-notifier-xxx
 # sudo mv /usr/bin/update-manager /usr/bin/update-manager-xxx
 
-sudo cp appdesktops/* /usr/share/applications
-
 ln -s $PWD/bashrc $HOME/.mybash
 ln -s $PWD/vimrc $HOME/.vimrc
 ln -s $PWD/fonts.conf $HOME/.config/fontconfig/fonts.conf
+sudo ln -s $PWD/touchpad.sh /usr/local/bin/
+# Set icons for apps.
+for FNAME in `ls $PWD/appdesktops`; do
+	ln -s $PWD/appdesktops/$FNAME $HOME/.local/share/applications/$FNAME
+done
+# Setup autostart.
 mkdir -p $HOME/.config/autostart
 for FNAME in `ls $PWD/autostart`; do
 	ln -s $PWD/autostart/$FNAME $HOME/.config/autostart/$FNAME
