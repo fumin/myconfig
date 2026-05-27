@@ -1,4 +1,4 @@
-export LC_ALL=C.UTF-8
+export LC_ALL=en_US.UTF-8
 
 export GOPATH=$HOME/.local/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
@@ -17,6 +17,25 @@ open() {
         # Remove process start/stop notifications by running command in a subshell.
         # This is done by wrapping command with parenthesis.
         ($FINDER $1 &)
+}
+
+lxcattach() {
+	NAME=$1
+	IS_RUNNING=$(lxc-ls --running | grep $NAME)
+	if [ -z $IS_RUNNING ]; then
+		lxc-unpriv-start -n $NAME
+	fi
+
+	lxc-unpriv-attach -n $NAME -- su -l ubuntu
+}
+
+lxccp() {
+	INSRC=$1
+	IFS="/" read -r CONTAINER SRCPATH <<< $INSRC
+	SRC=$HOME/.local/share/lxc/$CONTAINER/rootfs/home/ubuntu/$SRCPATH
+	sudo cp -r $SRC .
+	BASENAME=$(basename $SRC)
+	sudo chown -R $USER $BASENAME
 }
 
 # Fix no sound.

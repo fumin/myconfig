@@ -13,7 +13,12 @@ www.google.com##.Hk4XGb.D1LMTd
 www.google.com##.tBgtgb
 
 ! gmail upgrade button
-mail.google.com##.I6agWe
+mail.google.com##[data-pep-id="global-pep-gmail"]
+! gmail Gemini button
+mail.google.com##[jscontroller="xdV2Hc"]
+mail.google.com##[jscontroller="EdTKdf"]
+! gmail Studio button
+mail.google.com##[aria-label="Studio"]
 
 ! Dec 23, 2024 https://github.com
 github.com##.copilotPreview__container
@@ -43,5 +48,13 @@ mobile01.com##.ad_headline
 ! Dec 31, 2025 https://seekingalpha.com
 seekingalpha.com##.top-full.inset-x-0.absolute
 
+! Remove facebook Create story section.
 facebook.com##span:has-text("Create story"):upward(20):remove()
-facebook.com##h3:has-text("Reels"):upward(21):remove()
+! Prevent facebook from automatically reloading.
+facebook.com##+js(aeld, /blur|focus|afterblur|mousemove|visibilitychange/)
+
+! Hide pinned messages.
+web.telegram.org##.HeaderPinnedMessageWrapper
+
+! Make ptt words align.
+term.ptt.cc##*:style(font-family: mono !important)
