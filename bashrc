@@ -4,6 +4,7 @@ export GOPATH=$HOME/.local/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 # Set the BROWSER environment so that `go tool pprof -web` uses our browser instead of the default chrome.
 export BROWSER=/usr/local/firefox/firefox
+export PATH=$PATH:$HOME/.local/monero-cli
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
@@ -21,7 +22,7 @@ open() {
 
 lxcattach() {
 	NAME=$1
-	IS_RUNNING=$(lxc-ls --running | grep $NAME)
+	IS_RUNNING=$(lxc-ls --running -1 | grep $NAME)
 	if [ -z $IS_RUNNING ]; then
 		lxc-unpriv-start -n $NAME
 	fi
