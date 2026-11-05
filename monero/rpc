@@ -1,0 +1,8 @@
+WALLET_FILE="$1"
+PORT="$2"
+
+if [ -z "$PORT" ]; then
+        PORT=28088
+fi
+
+monero-wallet-rpc --daemon-address localhost:18081 --wallet-file $WALLET_FILE --password regtest --rpc-bind-port $PORT --disable-rpc-login --allow-mismatched-daemon-version --log-file /dev/null

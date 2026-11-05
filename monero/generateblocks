@@ -1,0 +1,12 @@
+WALLET_FILE="$1"
+NUM_BLOCKS="$2"
+
+if [ -z "$NUM_BLOCKS" ]; then
+	NUM_BLOCKS=1
+fi
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+ADDRESS=$($SCRIPT_DIR/cli $WALLET_FILE address | sed -n 's/^Opened wallet: //p')
+
+curl --silent http://127.0.0.1:18081/json_rpc -H 'Content-Type: application/json' -d '{"jsonrpc": "2.0", "id": "0", "method": "generateblocks", "params": {"amount_of_blocks": '$NUM_BLOCKS', "wallet_address":"'$ADDRESS'"}}'

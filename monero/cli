@@ -1,0 +1,4 @@
+WALLET_FILE="$1"
+REST_ARG=("${@:2}")
+
+monero-wallet-cli --log-file /dev/null --allow-mismatched-daemon-version --wallet-file $WALLET_FILE --password regtest ${REST_ARG[@]}

@@ -1,0 +1,1 @@
+monerod --regtest --offline --fixed-difficulty=1 --keep-fakechain
