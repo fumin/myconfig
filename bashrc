@@ -26,8 +26,12 @@ lxcattach() {
 	if [ -z $IS_RUNNING ]; then
 		lxc-unpriv-start -n $NAME
 	fi
+	lxc-wait -n $NAME -s RUNNING
 
 	lxc-unpriv-attach -n $NAME -- su -l ubuntu
+	# Below is for the case where are not using the lxc-default-with-nesting
+	# apparmor profile. In this case, logind does not run.
+	# lxc-unpriv-attach -n $NAME -- runuser -u ubuntu -- bash -lc 'cd ~ && exec bash -l'
 }
 
 lxccp() {

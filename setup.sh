@@ -4,14 +4,23 @@ if [[ ! -n $FIREFOX_PROFILE ]]; then
 	exit 1
 fi
 
-# sudo mv /usr/bin/update-notifier /usr/bin/update-notifier-xxx
-# sudo mv /usr/bin/update-manager /usr/bin/update-manager-xxx
-# sudo snap refresh --hold
+# Manual tasks:
+# Add a line to /etc/nftables.conf `include "$PWD/nftables.conf"`.
+
+# Commands with sudo:
+#
+# mv /usr/bin/update-notifier /usr/bin/update-notifier-xxx
+# mv /usr/bin/update-manager /usr/bin/update-manager-xxx
+# snap refresh --hold
+# ln -s $PWD/apparmor_lxc_myprofile /etc/apparmor.d/lxc_myprofile
 
 ln -s $PWD/bashrc $HOME/.mybash
 ln -s $PWD/vimrc $HOME/.vimrc
 ln -s $PWD/fonts.conf $HOME/.config/fontconfig/fonts.conf
-sudo ln -s $PWD/touchpad.sh /usr/local/bin/
+# Setup executables
+for FNAME in `ls $PWD/bin`; do
+	ln -s $PWD/bin/$FNAME $HOME/.local/bin/$FNAME
+done
 # Set icons for apps.
 for FNAME in `ls $PWD/appdesktops`; do
 	ln -s $PWD/appdesktops/$FNAME $HOME/.local/share/applications/$FNAME
@@ -41,4 +50,4 @@ ln -s $PWD/lxc.conf $HOME/.config/lxc/default.conf
 mkdir -p $FIREFOX_PROFILE/chrome
 ln -s $PWD/firefox/userChrome.css $FIREFOX_PROFILE/chrome/userChrome.css
 ln -s $PWD/firefox/userContent.css $FIREFOX_PROFILE/chrome/userContent.css
-sudo ln -s $PWD/firefox/distribution/policies.json /usr/local/firefox/distribution/policies.json
+ln -s $PWD/firefox/distribution/policies.json $HOME/.local/firefox/distribution/policies.json
